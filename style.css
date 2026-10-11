@@ -62,8 +62,9 @@ img{
 .right button{
   height: 40px;
   padding: 0px 20px;
-  background-color:white;
-  border: 1px solid grey;
+  background-color:black;
+  border: none;
+  color:white;
 }
 
 .page1 {
@@ -367,6 +368,9 @@ img{
     font-size: 14px;
     border-radius: 50px;
     cursor: pointer;
+    background-color:black;
+    color:white;
+    border:none;
   }
 
   .page1{
