@@ -1,29 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
-
-body{
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: #111;
-}
-h1, h2, .header .left{
-  font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
-  letter-spacing: -0.02em;
-}
-h1{
-  font-weight: 800;
-}
-h2{
-  font-weight: 700;
-}
-button{
-  font-family: inherit;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-.right a{
-  font-weight: 500;
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -31,45 +5,64 @@ button{
   user-select: none;
 }
 
-html,body{
-  overflow-x: hidden;
-}
 
-img{
-  max-width: 100%;
-}
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
-.header{
-  padding: 35px 35px;
+
+
+.header {
+  padding: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.right{
+.left > img {
+  width: 50px;
+ 
+}
+
+.manage{
+  transition: color 0.3s ease;
+}
+
+.manage:hover{
+color: #bb7ca1;
+cursor: pointer;
+}
+
+.right {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
+
 }
 
 .right a{
   text-decoration: none;
+  font-size: 20px;
   color: #000;
 }
 
 .right button{
   height: 40px;
   padding: 0px 20px;
-  background-color:black;
-  border: none;
-  color:white;
+  background-color:white;
+  border: 1px solid rgb(110, 107, 107);
+  transition: background-color 0.5s ease;
+}
+
+.right button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
 
 .page1 {
   width: 100%;
-  height: 25vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -77,7 +70,9 @@ img{
   gap: 2rem;
 }
 
+
 .craft h1{
+    text-align: center;
   width: 100%;
   font-size: 80px;
 }
@@ -89,14 +84,15 @@ img{
 .craft span{
   color: grey;
 }
-.craft span:hover{
-  color: yellow;
-}
+
+
+
+
 
 .scroll button{
   background-color: white;
-  border: 1px solid grey;
-  height: 55px;
+  border: 1px solid rgb(139, 131, 131);
+  height: 58px;
   padding: 0px 25px;
 }
 
@@ -105,11 +101,12 @@ img{
   text-align: center;
 }
 
+
 .page2{
   display:flex;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: 100vh;
  width: 100%;
  background-color:#99CE25 ;
 }
@@ -122,16 +119,22 @@ img{
 }
 
 .design p{
+
   font-size: 18px;
 }
 
 .design h1{
   font-size: 75px;
-
+  
 }
 
 .design span{
   color: white;
+}
+
+.design span:hover{
+    color: #bb7ca1;
+    cursor: pointer;
 }
 
 .rotate-p p {
@@ -151,7 +154,8 @@ img{
 .page3{
   display: flex;
   align-items: center;
-  height: 35vh;
+  height: 100vh;
+  width: 100%;
 }
 
 .product{
@@ -173,31 +177,36 @@ img{
   color: grey;
 }
 
-.p-card{
+/* Shoe images - equal size */
+.p-card {
   display: flex;
-  gap:2.3rem;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
 }
 
 .bw-img {
-  margin-top: 15px ;
-  width: 25%;
-  height: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 350px;
+  margin-top: 15px;
   overflow: hidden;
 }
 
 .bw-img img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-   filter: grayscale(100%);
-  transition: filter 1s ease-in-out;
+  object-position: center;
+  filter: grayscale(100%);
+  transition: filter 0.6s ease-in-out;
 }
 
 .bw-img:hover img {
   filter: grayscale(0%);
+  cursor: pointer;
 }
-
 .rotate-p2 p{
     font-size: 12px;
   margin-right: 6vw;
@@ -208,46 +217,472 @@ img{
   transform: rotate(180deg);
 }
 
-.page4{
-  padding: 0px 35px;
+
+
+
+
+
+
+
+
+.page4 {
+  padding: 0 35px;
+  margin-top: 30px;
   width: 100%;
-
-}
-
-.b-card{
   display: flex;
-  gap: 3rem ;
-  width: 100%;
+  flex-direction: column;
+  gap: 1.8rem;
 }
 
-.b-card2{
-  margin-top: 2vh;
-  display: flex;
-  gap: 3rem;
-  width: 100%;
-}
-
-.page4>h1{
+.page4 > h1 {
   font-size: 55px;
+  line-height: 1.1;
 }
 
-.page4 span{
+.page4 span {
   color: grey;
 }
 
-.c-card{
+/* First row: 3 cards */
+.b-card,
+.b-card2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.b-card2 {
+  margin-top: 20px;
+}
+
+/* Individual cards */
+.c-card {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 0px 10px;
-  width: 27%;
+  gap: 12px;
+  padding: 22px;
+  width: 100%;
+  min-width: 0;
   background: #fff;
   border: 2px solid #000;
   border-radius: 14px;
   box-shadow: 6px 6px 0 #000;
+  overflow-wrap: break-word;
 }
 
+.c-card h2 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.c-card p {
+  line-height: 1.6;
+}
+
+.rotate-3 {
+  display: none;
+}
+
+.last-con {
+  margin-top: 3.2vh;
+}
+
+/* Hover */
+.page4 span:hover {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+
 .rotate-3 p{
+    /* background-color: green; */
+  margin-top: 5vh;
+  font-size: 12px;
+  margin-left: 15vw;
+  /* text-align: center; */
+  /* overflow: visible; */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.last-con{
+  margin-top: 3.2vh;
+}
+
+
+.page4 span:hover{
+cursor: pointer;
+color: rgb(97, 158, 5);
+}
+
+
+
+
+
+
+/* =========================
+   GLOBAL CSS
+========================= */
+
+:root {
+  --grey: #ffffff;
+  --black: #111111;
+  --green: #99CE25;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #111;
+}
+
+h1,
+h2,
+.header .left {
+  font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+.header {
+  padding: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.header .left {
+  width: auto;
+  flex-shrink: 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.right a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.right button {
+  height: 40px;
+  padding: 0 20px;
+  background-color: white;
+  border: 1px solid grey;
+  white-space: nowrap;
+}
+
+/* =========================
+   PAGE 1 / HERO
+========================= */
+
+.page1 {
+  width: 100%;
+  min-height: 25vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  gap: 2rem;
+}
+
+.craft {
+  width: 100%;
+}
+
+.craft h1 {
+  width: 100%;
+  font-size: 80px;
+  line-height: 1.05;
+  overflow-wrap: break-word;
+}
+
+#dot {
+  color: orange;
+}
+
+.craft span {
+  color: grey;
+  transition: color 0.3s ease;
+}
+
+.craft span:hover {
+  color: rgb(231, 231, 96);
+  cursor: pointer;
+}
+
+.c-para p {
+  line-height: 1.6;
+}
+
+.scroll {
+  width: 100%;
+  text-align: center;
+}
+
+.scroll button {
+  background-color: white;
+  border: 1px solid grey;
+  height: 55px;
+  padding: 0 25px;
+}
+
+/* =========================
+   PAGE 2 / DESIGN
+========================= */
+
+.page2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+  width: 100%;
+  background-color: var(--green);
+}
+
+.design {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 40px;
+  min-width: 0;
+}
+
+.design p {
+  font-size: 18px;
+}
+
+.design h1 {
+  font-size: 75px;
+  line-height: 1.08;
+  overflow-wrap: break-word;
+}
+
+.design span {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.rotate-p {
+  flex-shrink: 0;
+}
+
+.rotate-p p {
+  font-size: 12px;
+  margin-right: 6vw;
+  text-align: center;
+  overflow: visible;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.arrow-p {
+  min-width: 0;
+}
+
+.arrow-p p {
+  width: 75%;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* =========================
+   PAGE 3 / PROJECTS
+========================= */
+
+.page3 {
+  display: flex;
+  align-items: center;
+  min-height: 35vh;
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  /* padding: 0 40px; */
+  margin-top: 8vh;
+  width: 100%;
+}
+
+.product-arrow p {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.product h1 {
+  font-size: 55px;
+  line-height: 1.1;
+}
+
+.product span {
+  color: grey;
+}
+
+.p-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 15px;
+}
+
+.bw-img {
+  width: 100%;
+  height: 350px;
+  min-width: 0;
+  margin-top: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f0f0f0;
+}
+
+.bw-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+  transition:
+    filter 0.5s ease,
+    transform 0.6s ease;
+}
+
+.bw-img:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+.rotate-p2 {
+  flex-shrink: 0;
+}
+
+.rotate-p2 p {
+  font-size: 12px;
+  margin-right: 6vw;
+  text-align: center;
+  overflow: visible;
+  height: 400px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* =========================
+   PAGE 4 / CARDS
+========================= */
+
+.page4 {
+  padding: 0 35px;
+  width: 100%;
+}
+
+.page4 > h1 {
+  font-size: 55px;
+  line-height: 1.1;
+}
+
+.page4 span {
+  color: grey;
+}
+
+.b-card,
+.b-card2 {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.b-card2 {
+  margin-top: 2vh;
+}
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 10px;
+  width: 27%;
+  min-width: 0;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 #000;
+  overflow-wrap: break-word;
+}
+
+.c-card h2 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.c-card p {
+  line-height: 1.6;
+}
+
+.rotate-3 {
+  flex-shrink: 0;
+}
+
+.rotate-3 p {
   margin-top: 5vh;
   font-size: 12px;
   text-align: center;
@@ -256,324 +691,23 @@ img{
   transform: rotate(180deg);
 }
 
-.last-con{
-
+.last-con {
   margin-top: 3.2vh;
 }
 
-@media (max-width:1024px){
+/* =========================
+   LOADER
+========================= */
 
-  .header{
-    padding: 25px 25px;
-  }
-  .right{
-    gap: 1.8rem;
-  }
-
-  .page1,
-  .page2,
-  .page3{
-    height: auto;
-    min-height: 100vh;
-    min-height: 100svh;
-  }
-
-  .page1{
-    min-height: calc(100vh - 80px);
-    min-height: calc(100svh - 80px);
-  }
-  .page4{
-    min-height: 100vh;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .page1{
-    padding: 40px 25px 60px;
-  }
-  .craft h1{
-    font-size: 58px;
-  }
-
-  .page2{
-    padding: 70px 0;
-  }
-  .design{
-    padding: 0 25px;
-  }
-  .design h1{
-    font-size: 50px;
-  }
-  .arrow-p p{
-    width: 90%;
-    font-size: 18px;
-  }
-
-  .page3{
-    padding: 70px 0;
-  }
-  .product{
-    padding: 0 25px;
-  }
-  .product h1{
-    font-size: 42px;
-  }
-  .p-card{
-    gap: 1.2rem;
-  }
-  .bw-img{
-    width: 33%;
-    height: 320px;
-  }
-  .rotate-p2 p{
-    height: auto;
-  }
-
-  .page4{
-    padding: 40px 25px 60px;
-  }
-  .page4>h1{
-    font-size: 42px;
-  }
-  .b-card,
-  .b-card2{
-    gap: 1.2rem;
-  }
-  .c-card{
-    width: 31%;
-    padding: 18px 14px;
-  }
-}
-
-@media (max-width:768px){
-
-  .header{
-    padding: 14px 18px;
-  }
-  .header .left{
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .right{
-    gap: 0;
-  }
-  .right a{
-    display: none;
-  }
-  .right button{
-    height: 38px;
-    padding: 0 16px;
-    font-size: 14px;
-    border-radius: 50px;
-    cursor: pointer;
-    background-color:black;
-    color:white;
-    border:none;
-  }
-
-  .page1{
-    padding: 30px 20px 40px;
-    gap: 1.5rem;
-    min-height: calc(100vh - 66px);
-    min-height: calc(100svh - 66px);
-  }
-  .craft h1{
-    font-size: 40px;
-    line-height: 1.12;
-  }
-  .c-para p{
-    font-size: 16px;
-    line-height: 1.55;
-  }
-  .scroll{
-    text-align: left;
-  }
-  .scroll button{
-    width: 100%;
-    height: auto;
-    padding: 15px 18px;
-    font-size: 14px;
-    line-height: 1.4;
-    border-radius: 12px;
-    cursor: pointer;
-  }
-
-  .page2{
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding: 50px 0;
-    gap: 1.2rem;
-  }
-  .design{
-    padding: 0 20px;
-    gap: 0.9rem;
-  }
-  .design h1{
-    font-size: 32px;
-    line-height: 1.15;
-  }
-  .design p{
-    font-size: 16px;
-  }
-  .arrow-p p{
-    width: 100%;
-    font-size: 16px;
-    line-height: 1.55;
-  }
-
-  .rotate-p{
-    order: -1;
-    padding: 0 20px;
-  }
-  .rotate-p p{
-    writing-mode: horizontal-tb;
-    transform: none;
-    margin: 0;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-  }
-
-  .page3{
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding: 50px 0;
-    gap: 1.2rem;
-  }
-  .product{
-    padding: 0;
-    gap: 1.3rem;
-  }
-  .product h1,
-  .product-arrow{
-    padding: 0 20px;
-  }
-  .product h1{
-    font-size: 32px;
-    line-height: 1.15;
-  }
-  .product-arrow p{
-    font-size: 16px;
-    line-height: 1.55;
-  }
-  .product-arrow br{
-    display: none;
-  }
-
-  .p-card{
-    gap: 14px;
-    padding: 0 20px 6px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .p-card::-webkit-scrollbar{
-    display: none;
-  }
-  .bw-img{
-    flex: 0 0 72%;
-    width: 72%;
-    height: 320px;
-    margin-top: 0;
-    border-radius: 14px;
-    scroll-snap-align: center;
-  }
-
-  .rotate-p2{
-    order: -1;
-    padding: 0 20px;
-  }
-  .rotate-p2 p{
-    writing-mode: horizontal-tb;
-    transform: none;
-    height: auto;
-    margin: 0;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-  }
-
-  .page4{
-    padding: 50px 20px;
-  }
-  .page4>h1{
-    font-size: 32px;
-    line-height: 1.15;
-  }
-  .last-con{
-    margin-top: 22px;
-  }
-  .b-card,
-  .b-card2{
-    flex-direction: column;
-    gap: 18px;
-  }
-  .b-card2{
-    margin-top: 18px;
-  }
-  .c-card{
-    width: 100%;
-    padding: 20px 18px;
-    gap: 0.5rem;
-    box-shadow: 4px 4px 0 #000;
-  }
-  .c-card h2{
-    font-size: 20px;
-  }
-  .c-card p{
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
-  .rotate-3{
-    order: -1;
-  }
-  .rotate-3 p{
-    writing-mode: horizontal-tb;
-    transform: none;
-    margin: 0;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-  }
-}
-
-@media (max-width:400px){
-  .craft h1{
-    font-size: 34px;
-  }
-  .design h1,
-  .product h1,
-  .page4>h1{
-    font-size: 28px;
-  }
-  .bw-img{
-    flex-basis: 80%;
-    width: 80%;
-    height: 290px;
-  }
-}
-
-:root{
-  --grey: #ffffff;
-}
-
-.loader{
+.loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 9;
-  background: var(--grey);
+  height: 100vh;
+  height: 100svh;
+  z-index: 9999;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -581,7 +715,7 @@ img{
   backface-visibility: hidden;
 }
 
-.loader .bulge{
+.loader .bulge {
   position: absolute;
   top: 0;
   right: calc(100% - 1px);
@@ -589,11 +723,11 @@ img{
   height: 100%;
 }
 
-.loader .bulge path{
+.loader .bulge path {
   fill: var(--grey);
 }
 
-.logo{
+.logo {
   width: clamp(90px, 22vw, 200px);
   height: auto;
   display: block;
@@ -602,6 +736,359 @@ img{
   transform-origin: 50% 100%;
 }
 
-.left{
-  width: 10%;
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/* Sirf mobile (max-width: 768px) */
+
+@media (max-width: 768px) {
+
+  /* ---------- Page scope + reset (sirf landing ke sections par) ---------- */
+  :root {
+    --grey: #ffffff;
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #111;
+    user-select: none;
+  }
+  *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; }
+
+  /* ---------- Typography ---------- */
+  h1,
+  h2,
+  .header .left {
+    font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-weight: 800; }
+  h2 { font-weight: 700; }
+  button {
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- Header ---------- */
+  .header {
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .header .left {
+    width: 10%;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  .right a { display: none; }
+  .right button {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  /* ---------- Page 1 ---------- */
+  .page1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 20px 40px;
+    gap: 1.5rem;
+    height: auto;
+    min-height: calc(100vh - 66px);
+    min-height: calc(100svh - 66px);
+  }
+  .craft h1 {
+    width: 100%;
+    font-size: 40px;
+    line-height: 1.12;
+  }
+  #dot { color: orange; }
+  .craft span { color: grey; }
+  .craft span:hover { color: yellow; }
+  .c-para p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .scroll {
+    width: 100%;
+    text-align: left;
+  }
+  .scroll button {
+    width: 100%;
+    height: auto;
+    padding: 15px 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  /* ---------- Page 2 ---------- */
+  .page2 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 50px 0;
+    gap: 1.2rem;
+    background-color: #99CE25;
+  }
+  .design {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 0 20px;
+  }
+  .design h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .design p { font-size: 16px; }
+  .design span { color: white; }
+  .arrow-p p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /* rotated labels -> horizontal on mobile */
+  .rotate-p,
+  .rotate-p2 {
+    order: -1;
+    padding: 0 20px;
+  }
+  .rotate-p p,
+  .rotate-p2 p,
+  .rotate-3 p {
+    writing-mode: horizontal-tb;
+    transform: none;
+    height: auto;
+    margin: 0;
+    text-align: left;
+    overflow: visible;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+  .rotate-3 { order: -1; }
+
+  /* ---------- Page 3 ---------- */
+  .page3 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 50px 0;
+    gap: 1.2rem;
+  }
+  .product {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding: 0;
+  }
+  .product h1,
+  .product-arrow { padding: 0 20px; }
+  .product h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .product span { color: grey; }
+  .product-arrow p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .product-arrow br { display: none; }
+
+  .p-card {
+    display: flex;
+    gap: 14px;
+    padding: 0 20px 6px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .p-card::-webkit-scrollbar { display: none; }
+  .bw-img {
+    flex: 0 0 72%;
+    width: 72%;
+    height: 320px;
+    margin-top: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    scroll-snap-align: center;
+  }
+  .bw-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 1s ease-in-out;
+  }
+  .bw-img:hover img { filter: grayscale(0%); }
+
+  /* ---------- Page 4 ---------- */
+  .page4 {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .page4 > h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .page4 span { color: grey; }
+  .last-con { margin-top: 22px; }
+  .b-card,
+  .b-card2 {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+  }
+  .b-card2 { margin-top: 18px; }
+  .c-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 20px 18px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 14px;
+    box-shadow: 4px 4px 0 #000;
+  }
+  .c-card h2 { font-size: 20px; }
+  .c-card p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* ---------- Loader ---------- */
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  .loader .bulge {
+    position: absolute;
+    top: 0;
+    right: calc(100% - 1px);
+    width: 40vw;
+    height: 100%;
+  }
+  .loader .bulge path { fill: var(--grey); }
+  .logo {
+    width: clamp(90px, 22vw, 200px);
+    height: auto;
+    display: block;
+    opacity: 0;
+    will-change: transform;
+    transform-origin: 50% 100%;
+  }
+}
+
+/* ---------- Small phones (max-width: 400px) ---------- */
+@media (max-width: 400px) {
+  .craft h1 { font-size: 34px; }
+  .design h1,
+  .product h1,
+  .page4 > h1 { font-size: 28px; }
+  .bw-img {
+    flex-basis: 80%;
+    width: 80%;
+    height: 290px;
+  }
+
+   .page4 {
+    padding: 0 20px;
+    gap: 1.2rem;
+  }
+
+  .page4 > h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .last-con {
+    margin-top: 15px;
+  }
+
+  .b-card,
+  .b-card2 {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .b-card2 {
+    margin-top: 18px;
+  }
+
+  .c-card {
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 14px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .c-card h2 {
+    font-size: 21px;
+  }
+
+  .c-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
