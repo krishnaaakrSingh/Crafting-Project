@@ -1,4 +1,4 @@
-const loader = document.getElementById('loader');
+// const loader = document.getElementById('loader');
 const logo = document.getElementById('logo');
 const html = document.documentElement;
 const body = document.body;
@@ -12,27 +12,70 @@ body.style.overflow = 'hidden';
 
 gsap.set(logo, { opacity: 1, y: dropFrom(), scaleX: 0.9, scaleY: 1.2, transformOrigin: '50% 100%' });
 
-gsap.set('.header', { opacity: 0, y: -24 });
+gsap.to('.header, .header .right', {
+  opacity: 1,
+  y: 0,
+  duration: 0.8,
+  ease: 'power3.out',
+  overwrite: 'auto'
+});
 gsap.set('.page1 > *', { opacity: 0, y: 40 });
 
 const sections = gsap.utils.toArray('.page2 > *, .page3 > *, .page4 > *');
 gsap.set(sections, { opacity: 0, y: 50 });
 
+
 function revealPage() {
-  gsap.to('.header', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
-  gsap.to('.page1 > *', { opacity: 1, y: 0, duration: 0.9, stagger: 0.12, delay: 0.1, ease: 'power3.out' });
+  // Header
+  gsap.to('.header', {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        gsap.to(entry.target, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' });
-        io.unobserve(entry.target);
+  // Page 1
+  gsap.to('.page1 > *', {
+    opacity: 1,
+    y: 0,
+    duration: 0.9,
+    stagger: 0.12,
+    delay: 0.1,
+    ease: 'power3.out'
+  });
+
+  // Baaki pages visible rakho.
+  // Scroll karne par inka content animate hoga.
+  gsap.set('.page2 > *, .page3 > *, .page4 > *', {
+    opacity: 1,
+    y: 0,
+    clearProps: 'opacity,transform'
+  });
+
+  // Images fade-in initial state
+  gsap.utils.toArray('.bw-img').forEach((image) => {
+    gsap.fromTo(image,
+      {
+        opacity: 0,
+        y: 40
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: image,
+          start: 'top 90%',
+          toggleActions: 'play none none none'
+        }
       }
-    });
-  }, { threshold: 0.15 });
+    );
+  });
 
-  sections.forEach((el) => io.observe(el));
+  ScrollTrigger.refresh();
 }
+
 
 const tl = gsap.timeline({
   onComplete: () => {
